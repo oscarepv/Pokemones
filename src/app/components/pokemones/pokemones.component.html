@@ -1,0 +1,45 @@
+<h1>Pokdex</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button [routerLink]="['/pokemon','nuevo']" type="button" class="btn btn-info">+</button>
+  </div>
+
+</div>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+  <tr >
+    <th scope="col">#</th>
+    <th scope="col">descripcion</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Biografia</th>
+    <th scope="col">Tipo</th>
+    <th scope="col">Opciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pokemon of pokedex; let i = index">
+    <th scope="row">{{ i+1 }}</th>
+    <td><img class="poke" [src]="pokemon.url" alt=""></td>
+    <td>{{pokemon.nombre}}</td>
+    <td>{{pokemon.bio}}</td>
+    <td>{{pokemon.tipo}} </td>
+    <td>
+      <div>
+        <button
+          [routerLink]="['/pokemon',pokemon.id]" type="button" class="btn btn-info"
+        >Editar</button>
+        <button
+          (click)="eliminarPokemon(pokemon.id,id)"  type="button" class="btn btn-danger"
+        >Eliminar</button>
+      </div>
+
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+

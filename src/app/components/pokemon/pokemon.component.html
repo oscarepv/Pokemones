@@ -1,0 +1,73 @@
+<h1>Pokemon: <small>{{ pokemon.nombre}}</small></h1>
+<div class="card pokecard" style="width: 18rem;">
+  <img class="card-img-top" [src]="pokemon.url" alt="pokemon">
+</div>
+<hr>
+<div class="row">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <button [routerLink]="['/pokedex']" type="button" class="btn btn-success">Regresar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 text-right">
+      <button [routerLink]="['/pokemon','nuevo']" type="button" class="btn btn-info">Limpiar</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)="guardar()" #forma="ngForm">
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input
+          type="text" class="form-control"  placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="pokemon.nombre"
+        >
+      </div>
+      <div class="form-group ">
+        <label for="tipo">Tipo</label>
+        <select
+          name="tipo"
+          [(ngModel)]="pokemon.tipo"
+          class="custom-select my-1 mr-sm-2" id="tipo">
+          <option selected>Choose...</option>
+          <option value="Fuego">Fuego</option>
+          <option value="Agua">Agua</option>
+          <option value="Hierva">Hierva</option>
+          <option value="Pajarito">Pajarito</option>
+          <option value="Electrico">Electrico</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Biografia</label>
+        <input
+          type="text" class="form-control"  placeholder="Bio"
+          name="bio"
+          [(ngModel)]="pokemon.bio"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">URL</label>
+        <input
+          type="text" class="form-control"  placeholder="url"
+          name="url"
+          [(ngModel)]="pokemon.url"
+        >
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <button
+            type="submit" class="btn btn-info"
+
+          >Guardar cambios</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
