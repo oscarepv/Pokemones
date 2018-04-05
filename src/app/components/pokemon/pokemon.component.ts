@@ -12,7 +12,7 @@ export class PokemonComponent implements OnInit {
   pokemon: Pokemon = {
     nombre: '',
     bio: '',
-    url: 'http://www.pvequip.cl/wp-content/uploads/2015/03/no-disponible.png',
+    url: 'https://www.fullclasificados.ec/oportunidades/images/frontend/no_image_383_291.png',
     tipo: '',
  }
   constructor(private  pokemonService: PokemonService, private router: Router, private activatedRoute: ActivatedRoute) {
